@@ -21,19 +21,21 @@ scene.add( light );
 
 
 
-		const geometry = new THREE.SphereGeometry( 7, 32, 16 );
+		const geometry = new THREE.SphereGeometry( 10, 32, 16 );
 const material = new THREE.MeshPhysicalMaterial( { 
   color: 'white',
   roughness: 0,
   transmission: 1,
   transparent: true,
   opacity: 1,
-  thickness: 3.2,
+  ior: 1.1,
+  thickness: -3.5,
   
  } );
   
 const sphere = new THREE.Mesh(geometry,material);
 scene.add( sphere );
+sphere.scale.set(1.3,1.3,1.3)
 
 let plane;
 
@@ -58,7 +60,7 @@ let plane;
 			function animate() {
 				requestAnimationFrame( animate );
               if(plane){
-				plane.position.y -= 0.03;
+				plane.position.y -= 0.16;
 			  }
 				
 	 
